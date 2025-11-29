@@ -1,0 +1,2 @@
+# elect
+ReactとElectronを組み合わせたアプリテンプレート
