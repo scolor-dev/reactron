@@ -1,0 +1,40 @@
+{
+  "name": "elect",
+  "version": "1.0.0",
+  "description": "ReactとElectronを組み合わせたアプリテンプレート",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:renderer": "vite --config renderer/vite.config.ts",
+    "build:renderer": "vite build --config renderer/vite.config.ts",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "electron": "electron .",
+    "dev": "concurrently \"npm run dev:renderer\" \"wait-on http://localhost:5173 && npm run electron\"",
+    "build": "npm run build:renderer && npm run build:electron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scolor-dev/elect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scolor-dev/elect/issues"
+  },
+  "homepage": "https://github.com/scolor-dev/elect#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "electron": "^39.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "wait-on": "^9.0.3"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
